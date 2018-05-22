@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Google+ Styled Buttons, Icon Buttons &amp; Dropdown Menu Buttons by Social-IT-e Media</title>
+  <meta name="description" content="This is an easy to implement framework of Google+ styled buttons, icon buttons &amp; dropdown menu buttons that look and work great in web applications.">
+  <meta name="author" content="Bruce Galpin">
+  <meta name="version" content="1.3">
+  <!-- For documentation please visit http://shrapp.nl/post/google-plus-ui-buttons -->
+  
+  <link rel="stylesheet" href="css/css3-buttons1.css" type="text/css"  media="screen">
+  <script type="text/javascript" src="./jquery/jquery-1.4.2.min.js"></script>
+  
+  <!-- Using TipTip jQuery plugin for the tooltips -->
+  <link rel="stylesheet" href="tiptip.css" type="text/css"  media="screen">
+	<script src="jquery.tiptip.js"></script>
+  
+	<script>
+		$(document).ready(function() {
+		
+			// Toggle the dropdown menu's
+			$(".dropdown .button, .dropdown button").click(function () {
+				if (!$(this).find('span.toggle').hasClass('active')) {
+					$('.dropdown-slider').slideUp();
+					$('span.toggle').removeClass('active');
+				}
+       
+        // open selected dropown
+				$(this).parent().find('.dropdown-slider').slideToggle('fast');
+				$(this).find('span.toggle').toggleClass('active');
+				
+				return false;
+			});
+			
+			// Launch TipTip tooltip
+			$('.tiptip a.button, .tiptip button').tipTip();
+		
+		});
+		
+		// Close open dropdown slider by clicking elsewhwere on page
+		$(document).bind('click', function (e) {
+			if (e.target.id != $('.dropdown').attr('class')) {
+				$('.dropdown-slider').slideUp();
+				$('span.toggle').removeClass('active');
+			}
+		});
+  </script>
+  
+  <style>
+  <!--
+		a, a:active, a:visited { color: #607890; }
+		a:hover { color: #036; }
+		
+		.buttons {
+			background: #F1F1F1;
+			padding-bottom: 10px;
+			border: 1px solid #D2D2D2;
+			width: 715px;
+			height:30px;
+			margin-bottom: 20px;
+			align:center;
+		}
+		
+		body {
+			font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+			text-align: center;
+			margin: 0;
+		}
+		
+	    #container {
+			text-align: left;
+			margin: 0 auto;
+			padding: 40px;
+			align:center;
+		}
+		
+		h1, h2, h3, h4, h5 {
+			font-family: Molengo, Arial, Helvetica, sans-serif;
+			margin: 0 0 14px 0;
+			padding: 0;
+		}
+		
+		p {
+			margin: 0 0 7px 0;
+			padding: 0;
+		}
+  -->
+  </style>
+</head>
+<body>
+<div id="container">
+<div class="buttons">
+  <a href="demo.html" class="ddm"><button><span class="icon icon108"></span><span class="label">Home</span></button></a>
+  
+  <div class="dropdown">
+    <a href="#" class="button"><span class="icon icon130"></span><span class="label">Dealer</span><span class="toggle"></span></a>
+    <div class="dropdown-slider">
+      <a href="#" class="ddm"><span class="icon icon3"></span><span class="label">Add</span></a>
+      <a href="#" class="ddm"><span class="icon icon145"></span><span class="label">Edit</span></a>
+    </div> <!-- /.dropdown-slider -->
+  </div> <!-- /.dropdown -->
+  
+  <div class="dropdown">
+    <a href="#" class="button"><span class="icon icon191"></span><span class="label">Users</span><span class="toggle"></span></a>
+    <div class="dropdown-slider">
+      <a href="#" class="ddm"><span class="icon icon127"></span><span class="label">Profile</span></a>
+      <a href="#" class="ddm"><span class="icon icon3"></span><span class="label">Add</span></a>
+      <a href="#" class="ddm"><span class="icon icon145"></span><span class="label">Edit</span></a>
+    </div> <!-- /.dropdown-slider -->
+  </div> <!-- /.dropdown -->
+  
+  <div class="dropdown">
+    <a href="#" class="button"><span class="icon icon125"></span><span class="label">Mail Recievers</span><span class="toggle"></span></a>
+    <div class="dropdown-slider">
+      <a href="#" class="ddm"><span class="icon icon3"></span><span class="label">Add</span></a>
+      <a href="#" class="ddm"><span class="icon icon145"></span><span class="label">Edit</span></a>
+    </div> <!-- /.dropdown-slider -->
+  </div> <!-- /.dropdown -->
+  
+   <div class="dropdown">
+    <a href="#" class="button"><span class="icon icon196"></span><span class="label">Profile</span><span class="toggle"></span></a>
+    <div class="dropdown-slider">
+      <a href="#" class="ddm"><span class="icon icon3"></span><span class="label">Add</span></a>
+      <a href="#" class="ddm"><span class="icon icon145"></span><span class="label">Edit</span></a>
+    </div> <!-- /.dropdown-slider -->
+  </div> <!-- /.dropdown -->
+   
+  <div class="dropdown">
+    <a href="#" class="button"><span class="icon icon2"></span><span class="label">Profile Access</span><span class="toggle"></span></a>
+    <div class="dropdown-slider">
+      <a href="#" class="ddm"><span class="icon icon3"></span><span class="label">Add</span></a>
+      <a href="#" class="ddm"><span class="icon icon145"></span><span class="label">Edit</span></a>
+    </div> <!-- /.dropdown-slider -->
+  </div> <!-- /.dropdown -->
+  
+
+
+
+  
+</div> <!-- /.buttons -->
+
+</div> <!-- /#container -->
+
+</body>
+</html>
